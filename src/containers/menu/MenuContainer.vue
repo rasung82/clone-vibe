@@ -1,18 +1,31 @@
 <template>
     <header id="header" class="header gradation hide_banner">
         <logo />
+        <div class="my_menu">
+            <profile />
+            <search />
+        </div>
+
     </header>
 
 </template>
 
 
 <script>
+/**
+ * 메뉴는 프로파일, 검색, 기본 메뉴, 플로팅 영역 메뉴가 존재한다.
+ * 로그인하면 기본 메뉴에 '보관함'이 추가된다.
+*/
 import Logo from '../../components/menu/Logo';
+import Profile from '../../components/menu/Profile'
+import Search from '../../components/menu/Search'
 
     export default {
         name: 'MenuContainer',
         components: {
-            Logo
+            Logo,
+            Profile,
+			Search
         }
     }
 </script>
@@ -295,11 +308,6 @@ import Logo from '../../components/menu/Logo';
         color: #fff
     }
 
-    .header .profile_area {
-        width: 197px;
-        border: 1px solid hsla(0, 0%, 100%, .1);
-        border-width: 1px 0
-    }
 
     @media (max-width: 1279px) {
         .header .profile_area {

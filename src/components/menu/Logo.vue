@@ -1,5 +1,5 @@
 <template>
-    <h1 class="">
+    <h1 class="logo">
         <a href="/" class="link_logo router-link-active"><span class="blind">VIBE</span></a>
     </h1>
 </template>

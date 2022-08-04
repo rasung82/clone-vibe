@@ -18113,11 +18113,12 @@ html:not([data-platform*=mobile]) .form_delivery.disabled .link_text:hover {
     background-color: #fff
 }
 
-
+/*
 .text {
     line-height: 28px;
     letter-spacing: -.5px
 }
+*/
 
 .link {
     display: inline-block;
@@ -22435,9 +22436,11 @@ html:not([data-platform*=mobile]) .form_delivery.disabled .link_text:hover {
     }
 }
 
+/*
 .profile_area {
     height: 100%
 }
+*/
 
 @media (max-width: 767px) {
     .profile_area {
@@ -22449,6 +22452,7 @@ html[data-platform*=mobile] .profile_area {
     display: none
 }
 
+/*
 .profile_area .link_login {
     display: block;
     height: 100%;
@@ -22457,11 +22461,13 @@ html[data-platform*=mobile] .profile_area {
     color: #fff
 }
 
+
 .profile_area .link_login .text {
     display: inline-block;
     vertical-align: middle;
     padding: 17px 11px 18px
 }
+*/
 
 .profile {
     display: block;
@@ -23814,6 +23820,7 @@ html[data-platform*=mobile] .profile_area {
     text-align: center
 }
 
+/*
 .text {
     display: block;
     margin: 0 auto;
@@ -23823,6 +23830,7 @@ html[data-platform*=mobile] .profile_area {
     letter-spacing: -.5px;
     font-weight: 400
 }
+*/
 
 .highlight {
     color: #4f26e7;
@@ -41971,10 +41979,12 @@ html:not([data-platform*=mobile]) .streport_membership .ranking_top .item .link_
     }
 }
 
+/*
 .input_area {
     width: 340px;
     margin: 0 auto
 }
+*/
 
 @media (max-width: 1273px) {
     .input_area {
@@ -85465,9 +85475,11 @@ html:not([data-platform*=mobile]) .btn_area .btn_select:hover {
     background-color: #1e1e1e
 }
 
+/*
 .logo {
     padding: 16px 0 0 17px
 }
+*/
 
 
 .link_logo:after {
@@ -107082,12 +107094,14 @@ html[data-platform*=mobile] .popular_area .btn_play_now {
     }
 }
 
+/*
 .btn_link:before, .logo {
     background-image: url(https://vibe.naver.com/20220802152450_resources/img/sp_databackup.7afc1812.png);
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://vibe.naver.com/20220802152450_resources/img/sp_databackup.5d9ab1f3.svg);
     background-image: linear-gradient(transparent, transparent), url(https://vibe.naver.com/20220802152450_resources/img/sp_databackup.5d9ab1f3.svg);
     background-size: 253px 138px
 }
+*/
 
 .splugin_panel .btn_autoplay.checked + .btn_autoplay_visible, .splugin_panel .btn_autoplay:checked + .btn_autoplay_visible, .splugin_panel .btn_autoplay, .splugin_panel .btn_autoplay_visible, .splugin_panel .btn_setup:after {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAxCAYAAABnCd/9AAAACXBIWXMAAAsTAAALEwEAmpwYAAACOklEQVRoge2ZzWsTQRiHn4wehCrBiiB6EITk4KU1uXj0IHrUf0DUQyYt+IFf1bZS60cRxBixiLqtXqQ3PxC1Xj314GGNJyGhiKJSKIgXERF3PGwPmjgxmzZZJ77PaXbe2dnfPizL7CwIgiC0jkR1R6VSeRkEQW+rL6yUKqVSqS31xsSZZXn1oCAIetPpdKuzUC6X/3rDcWZRLb+qo4gYCyLGgoixIGIsiBgL/4eY6Rfw/FWkU2rWMR3H5DMY8GD1Spi92/Bp7j4x377Dj6D+mInpUArAyJ5I07srZvsAbD0I7+f/XL/1FE5OhO1CH+zdEWl6d8Uku2D2I+wagblPv9duPoHBybBd6IP9OyNP766YqUHo2QRv5kI585/D/huPYeh22L7SnBRwWUyyC+6PwuaNUPkAu8/A2BQM3wnrxX7Y15wUcFkMQPcqeHgWUhvg9Tso3Av7i/2R3ynVuC0GYG0SHp2DbT2wfg1cP7RoKdAp65h13fBgFIyBRM3eW1O4/8T8yhJJgU4Ts4SIGAsixoKIsSBiLIgYCyLGQs0CTylVauRn2GJRSpUaGfOvZBEEQRAEQXAWrfVbrfWxOvVhrXW5nZnioOaTwBgzDlzO5XLHq2v5fP40cAG41oZssbKsusP3/ZlsNvs1kUhcymQyX3zfn4FQijHmPHDY87zxtidtM9ZNUq31KeCiMeaEUmrFgpQjnuddbV+8+Ki7e6y1HgLGFg6Pep5XbH0kR9BaH9Ba5+POIQiC0En8BLESmNdLGiO7AAAAAElFTkSuQmCC);
@@ -107338,13 +107352,6 @@ html[data-platform*=mobile] .popular_area .btn_play_now {
     }
 }
 
-.logo {
-    background-position: -4px -4px;
-    width: 245px;
-    height: 46px;
-    display: inline-block;
-    margin-bottom: 20px
-}
 
 @media (max-width: 593px) {
     .logo {

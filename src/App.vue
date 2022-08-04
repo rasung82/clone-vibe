@@ -15,6 +15,10 @@ import HomeContainer from './containers/HomeContainer';
 </script>
 
 <style>
+    .wrap {
+        height: 100%
+    }
+
     html:not([data-platform*=mobile]) a.section_title:hover {
         text-decoration: underline
     }
@@ -25,7 +29,7 @@ import HomeContainer from './containers/HomeContainer';
     }
 
     body, input, select, table, textarea {
-        font-family: -apple-system, BlinkMacSystemFont, AppleSDGothicNeo, Helvetica, 留묒� 怨좊뵓, Malgun Gothic, �뗭�, Dotum, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, AppleSDGothicNeo, Helvetica, "맑은 고딕", "Malgun Gothic", 돋움, Dotum, sans-serif;
         font-size: 14px;
         line-height: 1.25em
     }
