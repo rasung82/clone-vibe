@@ -8,8 +8,12 @@
 
 
 <script>
-  export default {
-    name: 'ProfileComponent',
+/**
+ * TODO : 로그인 처리
+ * TODO : 로그인, 로그아웃 되었을 때 화면이 다르게 처리되어야 한다.
+ */
+	export default {
+    name: 'ProfileView',
     components: {
     }
   }

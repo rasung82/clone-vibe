@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: 'LogoComponent',
+        name: 'LogoView',
         components: {
         }
     }

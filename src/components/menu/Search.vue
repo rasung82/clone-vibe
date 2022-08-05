@@ -11,7 +11,7 @@
 
 <script>
 	export default {
-		name: 'SearchComponent',
+		name: 'SearchView',
 		components: {
 		}
 	}
