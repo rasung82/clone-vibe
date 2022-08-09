@@ -1,15 +1,15 @@
 <template>
-    <home-container />
+    <home-view />
 </template>
 
 
 <script>
-import HomeContainer from './containers/HomeContainer';
+import HomeView from './views/HomeView.vue';
 
     export default {
         name: 'App',
         components: {
-            HomeContainer
+            HomeView
         }
     }
 </script>

@@ -6,9 +6,7 @@
             <search />
         </div>
     </header>
-
 </template>
-
 
 <script>
 /**
@@ -18,45 +16,43 @@
  * 기본 메뉴인 '투데이', '차트', '최신앨범', 'DJ 스테이션','VIBE MAG','이달의 노래', '보관함'
  * 추가 메뉴인 '#내돈내산' , 'ON STAGE' , 'VIBE 오디오' , '서비스 소개' , 'VIBE 멤버십'
  *
- * 겉으로 봐서 메뉴는 H/E에서 관리되지는 않는 것 같고 웹앱에서 관리하는 것 처럼 보인다.
+ * 겉으로 봐서 메뉴는 H/E에서 관리 되지는 않는 것 같고 웹앱에서 관리하는 것 처럼 보인다.
  *
 */
-import Logo from '../../components/menu/Logo';
-import Profile from '../../components/menu/Profile'
-import Search from '../../components/menu/Search'
+import Logo from '../components/menu/Logo';
+import Profile from '../components/menu/Profile'
+import Search from '../components/menu/Search'
 
-    export default {
-        name: 'MenuContainer',
-        components: {
-            Logo,
-            Profile,
-			Search
-        },
-        data() {
-        	return {
-        		menus : []
-            }
-        },
-        methods : {
-        	getMenus() {
-        		const menus = [
-                    { menuId: 1001, menuType: 'default', menuName: '투데이' },
-					{ menuId: 1002, menuType: 'default', menuName: '차트' },
-					{ menuId: 1003, menuType: 'default', menuName: '최신앨범' },
-					{ menuId: 1004, menuType: 'default', menuName: 'DJ 스테이션' },
-					{ menuId: 1005, menuType: 'default', menuName: 'VIBE MAG' },
-					{ menuId: 1006, menuType: 'default', menuName: '이달의 노래' },
-					{ menuId: 1007, menuType: 'default', menuName: '투데이' },
-                ];
+export default {
+    name: 'MenuView',
+    components: {
+        Logo,
+        Profile,
+        Search
+    },
+    data() {
+        return {
+            menus : []
+        }
+    },
+    methods : {
+        getMenus() {
+            const menus = [
+                { menuId: 1001, menuType: 'default', menuName: '투데이' },
+                { menuId: 1002, menuType: 'default', menuName: '차트' },
+                { menuId: 1003, menuType: 'default', menuName: '최신앨범' },
+                { menuId: 1004, menuType: 'default', menuName: 'DJ 스테이션' },
+                { menuId: 1005, menuType: 'default', menuName: 'VIBE MAG' },
+                { menuId: 1006, menuType: 'default', menuName: '이달의 노래' },
+                { menuId: 1007, menuType: 'default', menuName: '투데이' },
+            ];
 
-                // TODO: 로그인이 되었다면 '보관함'을 추가한다.
-                // menus.push({ menuId: 1007, menuType: 'default', menuName: '투데이' });
-
-                return menus;
-            }
-        },
-
-    }
+            // TODO: 로그인이 되었다면 '보관함'을 추가한다.
+            // menus.push({ menuId: 1007, menuType: 'default', menuName: '투데이' });
+            return menus;
+        }
+    },
+}
 </script>
 
 <style>

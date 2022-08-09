@@ -1,21 +1,20 @@
 <template>
     <div class="home">
         <div class="container_wrap">
-            <menu-container />
+            <menu-view />
         </div>
     </div>
 </template>
 
-
 <script>
-import MenuContainer from './menu/MenuContainer';
+import MenuView from './MenuView.vue';
 
-    export default {
-        name: 'HomeContainer',
-        components: {
-            MenuContainer
-        }
+export default {
+    name: 'HomeView',
+    components: {
+        MenuView
     }
+}
 </script>
 
 <style>
