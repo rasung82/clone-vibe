@@ -23,6 +23,12 @@ import Logo from '../components/menu/Logo';
 import Profile from '../components/menu/Profile'
 import Search from '../components/menu/Search'
 
+
+/**
+ * Vue 3.0 에 새롭게 추가된 composition-api 사용하기 전에
+ * Vue 2.0 코딩 스타일(?)로 작성해 본다.
+ *
+ */
 export default {
     name: 'MenuView',
     components: {
@@ -34,6 +40,17 @@ export default {
         return {
             menus : []
         }
+    },
+    created() {
+        console.log('created...');
+        const menus = this.getMenus();
+        console.log('menu is ', menus);
+    },
+    mounted() {
+        console.log('mounted...');
+    },
+    unmounted() {
+        console.log('unmounted...');
     },
     methods : {
         getMenus() {
