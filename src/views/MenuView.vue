@@ -2,8 +2,14 @@
     <header id="header" class="header gradation hide_banner">
         <logo />
         <div class="my_menu">
-            <profile />
-            <search />
+            <Profile />
+            <Search />
+            <div class="ly_menu" >
+                <div class="menu_area">
+                    <MainMenu :menus="mainMenus"/>
+                </div>
+            </div>
+
         </div>
     </header>
 </template>
@@ -20,8 +26,9 @@
  *
 */
 import Logo from '../components/menu/Logo';
-import Profile from '../components/menu/Profile'
-import Search from '../components/menu/Search'
+import Profile from '../components/menu/Profile';
+import Search from '../components/menu/Search';
+import MainMenu from '../components/menu/MainMenu';
 
 
 /**
@@ -34,39 +41,52 @@ export default {
     components: {
         Logo,
         Profile,
-        Search
+        Search,
+        MainMenu
     },
     data() {
         return {
-            menus : []
+            mainMenus: [],
+            extraMenus: []
         }
     },
     created() {
         console.log('created...');
-        const menus = this.getMenus();
-        console.log('menu is ', menus);
+        this.mainMenus = this.getMainMenus();
+        this.extraMenus =this.getExtraMenus();
     },
     mounted() {
-        console.log('mounted...');
+        console.log('mounted...', this.$options.name);
     },
     unmounted() {
         console.log('unmounted...');
     },
     methods : {
-        getMenus() {
+        getMainMenus() {
             const menus = [
-                { menuId: 1001, menuType: 'default', menuName: '투데이' },
-                { menuId: 1002, menuType: 'default', menuName: '차트' },
-                { menuId: 1003, menuType: 'default', menuName: '최신앨범' },
-                { menuId: 1004, menuType: 'default', menuName: 'DJ 스테이션' },
-                { menuId: 1005, menuType: 'default', menuName: 'VIBE MAG' },
-                { menuId: 1006, menuType: 'default', menuName: '이달의 노래' },
-                { menuId: 1007, menuType: 'default', menuName: '투데이' },
+                { menuId: 1001, menuType: 'main', menuName: '투데이' },
+                { menuId: 1002, menuType: 'main', menuName: '차트' },
+                { menuId: 1003, menuType: 'main', menuName: '최신앨범' },
+                { menuId: 1004, menuType: 'main', menuName: 'DJ 스테이션' },
+                { menuId: 1005, menuType: 'main', menuName: 'VIBE MAG' },
+                { menuId: 1006, menuType: 'main', menuName: '이달의 노래' },
+                { menuId: 1007, menuType: 'main', menuName: '투데이' },
             ];
 
             // TODO: 로그인이 되었다면 '보관함'을 추가한다.
-            // menus.push({ menuId: 1007, menuType: 'default', menuName: '투데이' });
+            // menus.push({ menuId: 1007, menuType: 'main', menuName: '투데이' });
             return menus;
+        },
+        getExtraMenus() {
+            const menus = [
+                { menuId: 1001, menuType: 'extra', menuName: '#내돈내산' },
+                { menuId: 1002, menuType: 'extra', menuName: 'ON STAGE' },
+                { menuId: 1003, menuType: 'extra', menuName: 'VIBE 오디오' },
+                { menuId: 1004, menuType: 'extra', menuName: '서비스 소개' },
+                { menuId: 1005, menuType: 'extra', menuName: 'VIBE 멤버십' },
+            ];
+
+            return menus
         }
     },
 }
@@ -78,30 +98,25 @@ export default {
         content: "";
         clear: both
     }
-
     .header .input_search::-ms-clear, .header .input_search::-ms-reveal {
         display: none;
         width: 0;
         height: 0
     }
-
     .header .input_search::-webkit-search-cancel-button, .header .input_search::-webkit-search-decoration, .header .input_search::-webkit-search-results-button, .header .input_search::-webkit-search-results-decoration {
         display: none
     }
-
     .header .btn_close_search:after, .header .btn_menu:after, .header .btn_search:after, .header .profile .nickname:after, .header .recent_keyword_area .btn_delete:after {
         display: inline-block;
         vertical-align: top;
         content: ""
     }
-
     .header .btn_close_input:before, .header .btn_close_search:after, .header .btn_menu:after, .header .btn_search:after, .header .floating_area .link_desktopapp, .header .floating_area .link_desktopapp:hover, .header .floating_area .link_subscribe, .header .icon_search, .header .link_login:before, .header .profile .img_wrap .default_thumb, .header .profile .nickname:after, .header .recent_keyword_area .btn_delete:after {
-        background-image: url(https://vibe.naver.com/20220802152450_resources/img/sp_topbar.f9766c07.png);
-        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://vibe.naver.com/20220802152450_resources/img/sp_topbar.b16613cd.svg);
-        background-image: linear-gradient(transparent, transparent), url(https://vibe.naver.com/20220802152450_resources/img/sp_topbar.b16613cd.svg);
-        background-size: 637px 597px
+        background-image: url(https://vibe.naver.com/20220811112716_resources/img/sp_topbar.f9766c07.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://vibe.naver.com/20220811112716_resources/img/sp_topbar.dd7bf0de.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://vibe.naver.com/20220811112716_resources/img/sp_topbar.dd7bf0de.svg);
+        background-size: 671px 626px
     }
-
     .header {
         position: fixed;
         top: 0;
@@ -111,19 +126,16 @@ export default {
         background-color: #000;
         border-right: 1px solid hsla(0, 0%, 100%, .1)
     }
-
     @media (max-width: 1919px) {
         .header {
             left: 0
         }
     }
-
     @media (max-width: 1279px) {
         .header {
             width: 225px
         }
     }
-
     @media (max-width: 767px) {
         .header {
             right: 0;
@@ -133,36 +145,30 @@ export default {
             border-right: none
         }
     }
-
     @media (max-width: 593px) {
         .header {
             height: 64px
         }
     }
-
     @media (max-width: 767px) {
         .header .logo {
             float: left
         }
     }
-
     .header .link_logo {
         display: inline-block;
         vertical-align: top
     }
-
     @media (max-width: 767px) {
         .header .link_logo {
             height: 67px
         }
     }
-
     @media (max-width: 593px) {
         .header .link_logo {
             height: 64px
         }
     }
-
     .header .link_logo:after {
         background-position: -248px -321px;
         width: 114px;
@@ -171,23 +177,19 @@ export default {
         margin: 27px 10px 26px 24px;
         content: ""
     }
-
     @media (max-width: 767px) {
         .header .link_logo:after {
             margin: 24px 10px 0 20px
         }
     }
-
     @media (max-width: 593px) {
         .header .link_logo:after {
             margin: 22px 15px 0 20px
         }
     }
-
     .header .btn_search {
         display: none
     }
-
     @media (max-width: 767px) {
         .header .btn_search {
             display: block;
@@ -196,43 +198,36 @@ export default {
             height: 67px
         }
     }
-
     @media (max-width: 593px) {
         .header .btn_search {
             height: 64px
         }
     }
-
     @media (max-width: 374px) {
         .header .btn_search {
             right: 52px
         }
     }
-
     .header .btn_search:after {
         background-position: -480px -512px;
         width: 20px;
         height: 20px
     }
-
     @media (max-width: 767px) {
         .header .btn_search:after {
             margin: 24px 11px 0
         }
     }
-
     @media (max-width: 593px) {
         .header .btn_search:after {
             margin: 22px 11px 0
         }
     }
-
     @media (max-width: 374px) {
         .header .btn_search:after {
             margin: 22px 9px 0
         }
     }
-
     .header .btn_menu {
         display: none;
         float: right;
@@ -246,26 +241,22 @@ export default {
             height: 64px
         }
     }
-
     .header .btn_menu:after {
         background-position: -355px -160px;
         width: 22px;
         height: 16px;
         margin: 24px 20px 0 10px
     }
-
     @media (max-width: 767px) {
         .header .btn_menu:after {
             margin: 24px 20px 0 11px
         }
     }
-
     @media (max-width: 374px) {
         .header .btn_menu:after {
             margin: 23px 20px 0 12px
         }
     }
-
     .header .my_menu {
         position: absolute;
         top: 73px;
@@ -277,15 +268,12 @@ export default {
         -webkit-overflow-scrolling: touch;
         -ms-overflow-style: -ms-autohiding-scrollbar
     }
-
     .header .my_menu::-webkit-scrollbar {
         width: 8px
     }
-
     .header .my_menu::-webkit-scrollbar-thumb, .header .my_menu::-webkit-scrollbar-track {
         border-radius: 5px
     }
-
     @media (max-width: 767px) {
         .header .my_menu {
             top: 0;
@@ -296,35 +284,28 @@ export default {
             overflow-y: visible
         }
     }
-
     @media (max-width: 593px) {
         .header .my_menu {
             height: 64px
         }
     }
-
     html:not([data-platform*=mobile]) .header .my_menu:hover::-webkit-scrollbar-track {
         background: hsla(0, 0%, 84.3%, .23)
     }
-
     html:not([data-platform*=mobile]) .header .my_menu:hover::-webkit-scrollbar-thumb {
         background: hsla(0, 0%, 53.7%, .6)
     }
-
     html[data-platform*=mobile] .header .my_menu {
         -webkit-overflow-scrolling: auto
     }
-
     @media (max-width: 767px) {
         html[data-platform*=mobile] .header .my_menu {
             -webkit-overflow-scrolling: touch
         }
     }
-
     .header .link_goapp {
         display: none
     }
-
     @media (max-width: 767px) {
         .header .link_goapp {
             display: block;
@@ -333,13 +314,11 @@ export default {
             line-height: 67px
         }
     }
-
     @media (max-width: 359px) {
         .header .link_goapp {
             display: none
         }
     }
-
     .header .link_goapp .ticket {
         display: inline-block;
         -webkit-transform: translateY(-1px);
@@ -349,14 +328,11 @@ export default {
         line-height: 19px;
         color: #fff
     }
-
-
     @media (max-width: 1279px) {
         .header .profile_area {
             width: 177px
         }
     }
-
     @media (max-width: 767px) {
         .header .profile_area {
             display: none
@@ -466,12 +442,12 @@ export default {
     }
 
     .header .link_login:before {
-        background-position: -594px -168px;
+        background-position: -628px -168px;
         width: 30px;
         height: 30px;
         margin: 0 10px 0 6px;
         border-radius: 50%;
-        content: ""
+        content: "";
     }
 
     .header .search_area {
@@ -643,12 +619,12 @@ export default {
     }
 
     .header .icon_search {
-        background-position: -452px -512px;
+        background-position: -284px -541px;
         width: 20px;
         height: 20px;
         position: absolute;
         top: 10px;
-        left: 13px
+        left: 13px;
     }
 
     @media (max-width: 767px) {

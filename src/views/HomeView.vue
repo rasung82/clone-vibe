@@ -40,9 +40,9 @@ export default {
          /*content: ""*/
     /*}*/
     /*.home:before, .section_navermusic .logo, .section_vibe .title {*/
-        /*background-image: url(https://vibe.naver.com/20220802152450_resources/img/sp_navermusic.ad2c9af8.png);*/
-        /*background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://vibe.naver.com/20220802152450_resources/img/sp_navermusic.596c58d6.svg);*/
-        /*background-image: linear-gradient(transparent, transparent), url(https://vibe.naver.com/20220802152450_resources/img/sp_navermusic.596c58d6.svg);*/
+        /*background-image: url(https://vibe.naver.com/20220811112716_resources/img/sp_navermusic.ad2c9af8.png);*/
+        /*background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://vibe.naver.com/20220811112716_resources/img/sp_navermusic.596c58d6.svg);*/
+        /*background-image: linear-gradient(transparent, transparent), url(https://vibe.naver.com/20220811112716_resources/img/sp_navermusic.596c58d6.svg);*/
         /*background-size: 361px 357px*/
     /*}*/
     .home.without_player .container_wrap  {
